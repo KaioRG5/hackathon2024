@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_13_202218) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_13_211148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.float "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_ingredients_on_product_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -46,5 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_202218) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ingredients", "products"
   add_foreign_key "sales", "products"
 end

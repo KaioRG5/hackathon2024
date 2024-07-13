@@ -10,8 +10,9 @@
 
 # Limpar a tabela products antes de adicionar novos dados
 Product.destroy_all
+Sale.destroy_all
 
-# Adicionar novos produtos (ingredientes)
+# Adicionar novos produtos (ingredientes) com preços aleatórios
 products = [
   { name: "Tomatoes", expiration_date: Date.new(2024, 8, 20), quantity: 50, uom: "kg" },
   { name: "Lettuce", expiration_date: Date.new(2024, 7, 25), quantity: 30, uom: "heads" },
@@ -63,16 +64,37 @@ products = [
   { name: "Vanilla Extract", expiration_date: Date.new(2026, 5, 25), quantity: 30, uom: "liters" }
 ]
 
-# Criar produtos no banco de dados
-products.each do |product|
+# Criar produtos no banco de dados com preços aleatórios
+created_products = products.map do |product|
   Product.create(
     name: product[:name],
     expiration_date: product[:expiration_date],
     quantity: product[:quantity],
     uom: product[:uom],
+    price: rand(1.0..100.0).round(2), # Random price between 1.0 and 100.0
     created_at: Time.now,
     updated_at: Time.now
   )
 end
+
+# Adicionar algumas vendas iniciais
+sales = [
+  { product: created_products.sample, quantity: 5, sale_price: rand(5.0..50.0).round(2), sale_date: Date.today },
+  { product: created_products.sample, quantity: 10, sale_price: rand(5.0..50.0).round(2), sale_date: Date.today },
+  { product: created_products.sample, quantity: 2, sale_price: rand(5.0..50.0).round(2), sale_date: Date.today - 1 },
+  # (other sales)
+]
+
+sales.each do |sale|
+  Sale.create(
+    product: sale[:product],
+    quantity: sale[:quantity],
+    sale_price: sale[:sale_price],
+    sale_date: sale[:sale_date],
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+end
+
 
 puts "Seed data added successfully!"

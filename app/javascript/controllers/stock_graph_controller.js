@@ -9,32 +9,32 @@ export default class extends Controller {
     console.log(this.canvasTarget); // Check if this logs the canvas element
 
     const products = [
-      { name: "Tomatoes", quantity: 50 },
-      { name: "Lettuce", quantity: 30 },
-      { name: "Chicken Breast", quantity: 100 },
-      { name: "Salmon Fillet", quantity: 50 },
+      { name: "Tomates", quantity: 50 },
+      { name: "Alface", quantity: 30 },
+      { name: "Peito de frango", quantity: 100 },
+      { name: "Filé de salmão", quantity: 50 },
       { name: "Bacon", quantity: 40 },
-      { name: "Eggs", quantity: 200 },
-      { name: "Milk", quantity: 150 },
-      { name: "Cheddar Cheese", quantity: 60 },
-      { name: "Parmesan Cheese", quantity: 40 },
-      { name: "Butter", quantity: 70 },
-      { name: "Olive Oil", quantity: 100 },
-      { name: "Garlic", quantity: 30 },
-      { name: "Onions", quantity: 70 },
-      { name: "Bell Peppers", quantity: 50 },
-      { name: "Mushrooms", quantity: 60 },
-      { name: "Carrots", quantity: 80 },
-      { name: "Potatoes", quantity: 90 },
-      { name: "Spinach", quantity: 40 },
-      { name: "Beef Steak", quantity: 100 },
-      { name: "Pasta", quantity: 200 },
-      { name: "Rice", quantity: 250 },
-      { name: "Salt", quantity: 300 },
+      { name: "Ovos", quantity: 200 },
+      { name: "Leite", quantity: 150 },
+      { name: "Cheddar", quantity: 60 },
+      { name: "Parmesão", quantity: 40 },
+      { name: "Manteiga", quantity: 70 },
+      { name: "Azeite de Oliva", quantity: 100 },
+      { name: "Alho", quantity: 30 },
+      { name: "Cebola", quantity: 70 },
+      { name: "Pimentão", quantity: 50 },
+      { name: "Cogumelos", quantity: 60 },
+      { name: "Cenouras", quantity: 80 },
+      { name: "Batatas", quantity: 90 },
+      { name: "Espinafre", quantity: 40 },
+      { name: "Filé mignon", quantity: 100 },
+      { name: "Macarrão", quantity: 200 },
+      { name: "Arroz", quantity: 250 },
+      { name: "Sal", quantity: 300 },
       { name: "Black Pepper", quantity: 100 },
       { name: "Paprika", quantity: 70 },
-      { name: "Basil", quantity: 30 },
-      { name: "Oregano", quantity: 40 },
+      { name: "Manjericão", quantity: 30 },
+      { name: "Orégano", quantity: 40 },
     ];
 
     // Sort products by quantity
@@ -45,11 +45,11 @@ export default class extends Controller {
 
     const colors = quantities.map(quantity => {
       if (quantity < 50) {
-        return 'red';
+        return '#FF9999'; // Darker Pastel Red
       } else if (quantity < 100) {
-        return 'yellow';
+        return '#FFFF99'; // Darker Pastel Yellow
       } else {
-        return 'green';
+        return '#99FF99'; // Darker Pastel Green
       }
     });
 

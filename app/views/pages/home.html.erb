@@ -2,4 +2,12 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 <h3>Teste commit contas</h3>
 
-<div><%= render "layouts/stock_graph" %></div>
+<div class="container">
+    <h2 class="text-center fw-bold p-3">Níveis de Estoque</h2>
+  <div class="feedback-container">
+    <div class="feedback-section">
+       <%= render "layouts/stock_graph" %>
+    </div>
+  </div>
+        <%= render "feedbacks/rating" %>
+</div>

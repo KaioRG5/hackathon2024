@@ -10,19 +10,21 @@ export default class extends Controller {
     new Chart(ctx, {
       type: 'scatter',
       data: {
-          labels: ['Janeiro','Fevereiro','Março','Abril'],
+          labels: ['Janeiro','Fevereiro','Março','Abril', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro'],
           datasets: [{
-            type: 'bar',
-            label: 'Número de vendas',
-            data: [100, 300, 200, 400],
-            borderColor: 'rgb(0, 128, 0)',
-            backgroundColor: 'rgba(0, 128, 0, 0.2)'
-          }, {
             type: 'line',
             label: 'Valor médio por refeição',
-            data: [35, 50, 40, 35],
+            data: [35, 50, 40, 35, 45, 65, 75, 85,75,65,55],
             fill: false,
-            borderColor: 'rgb(54, 162, 235)'
+            borderColor: '#FFc30b'
+          },
+
+            {
+            type: 'bar',
+            label: 'Número de vendas',
+            data: [100, 300, 200, 400, 350, 375, 250, 300, 400, 500, 450],
+            borderColor: 'rgb(0, 128, 0)',
+            backgroundColor: '#1d2951'
           }]
         },
       options: {

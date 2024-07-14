@@ -1,0 +1,31 @@
+.values {
+  display: flex;
+  justify-content: space-around; // Adjust spacing as needed
+  align-items: stretch; // Make sure cards have the same height
+  flex-wrap: wrap; // Allows wrapping if screen size is small
+}
+
+.sales-card {
+  flex: 1;
+  min-width: 250px; // Ensures cards have a minimum width
+  margin: 10px; // Adjust margin between cards as needed
+  padding: 20px; // Adjust padding as needed
+  background-color: #f8f9fa; // Adjust background color as needed
+  border: 1px solid #dee2e6; // Adjust border color as needed
+  border-radius: 16px; // Adjust border-radius as needed
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional: adds a shadow
+  text-align: center;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adjust shadow as needed
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transition for hover effect
+
+  // Hover effect
+  &:hover {
+    transform: scale(1.05); // Slightly increase the size on hover
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Deeper shadow on hover
+  }// Centers text inside the cards
+}
+
+.performance {
+  color: #03AC13;
+}

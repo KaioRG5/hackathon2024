@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-  belongs_to :ingredient
+  has_many :sales
 end

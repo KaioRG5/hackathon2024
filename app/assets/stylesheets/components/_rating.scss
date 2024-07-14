@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between; // Adjust spacing between sections
   gap: 20px; // Optional: adds space between the two sections
-  margin: 20px 0; // Optional: adds margin around the container
+  margin: 20px 0;// Optional: adds margin around the container
 }
 
 .feedback-section {
   flex: 1; // Allows sections to take up equal width
   border: 1px solid #ddd; // Optional: adds border around sections
-  padding: 20px; // Optional: adds padding inside the sections
+  padding: 16px; // Optional: adds padding inside the sections
   border-radius: 16px; // Optional: adds rounded corners
   background-color: #f9f9f9; // Optional: background color for sections
 
@@ -29,6 +29,11 @@
 
 .feedback-section p {
   margin: 10px 0; // Adjust margin around paragraphs
+}
+
+p {
+  display: flex;
+  align-items: center;
 }
 
 .star-rating {
@@ -65,6 +70,35 @@
     position: absolute;
     height: 100%;
     background-color: #1d2951; // Color for the filled portion
+    width: 0; // Start with 0 width and adjust with JavaScript
+    transition: width 0.5s ease;
+    // Smooth transition
+  }
+
+  .text {
+    margin-left: 10px; // Space between the bar and text
+  }
+}
+
+.waste-bar {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem; // Adjust the font size as needed
+  color: #747070; // Default color (gray for unselected portion)
+
+  .bar {
+    position: relative;
+    width: 100%; // Full width
+    height: 20px; // Adjust the height as needed
+    background-color: #f0f0f0; // Background color of the bar
+    border-radius: 10px; // Rounded corners
+    overflow: hidden; // Ensures no overflow
+  }
+
+  .fill {
+    position: absolute;
+    height: 100%;
+    background-color: #c80815; // Color for the filled portion
     width: 0; // Start with 0 width and adjust with JavaScript
     transition: width 0.5s ease;
     // Smooth transition

@@ -2,4 +2,59 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 <h3>Teste commit contas</h3>
 
+<div class="container">
+    <div class="values">
+        <div class="card">
+            <h2>Vendas do Dia</h2>
+            <p>R$ 1.250,00</p>
+        </div>
+
+        <div class="card">
+            <h2>Vendas do Mês</h2>
+            <p>R$ 35.000,00</p>
+        </div>
+
+        <div class="card">
+            <h2>Vendas do Ano</h2>
+            <p>R$ 270.000,00</p>
+        </div>
+    </div>
+<div>
+
+<div><%= render "layouts/sales_graph" %></div>
+
+<style>
+    .container {
+      text-align: center;
+    }
+    .values {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+    }
+    .card h2 {
+      font-size: 24px;
+      margin: 0;
+      color: #333;
+    }
+    .card p {
+      font-size: 36px;
+      margin: 10px 0;
+      color: #4CAF50;
+    }
+    .chart-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+</style>
+
 <div><%= render "layouts/stock_graph" %></div>
